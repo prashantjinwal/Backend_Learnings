@@ -21,6 +21,7 @@ router.post("/", (req, res) => {
 router
   .route("/:id")
   .get((req, res) => {
+    console.log(req.user)
     res.send(`user is here with the Id ${req.params.id}`);
   })
   .put((req, res) => {
@@ -30,6 +31,12 @@ router
     res.send(`Delete User with ID ${req.params.id}`);
   });
 
+
+const users = [{name:"kyle", name:"lassi"}]
+router.param("id", (req, res, next , id)=>{
+    req.user = users[id]
+    next()
+})
 
 
 module.exports = router;
