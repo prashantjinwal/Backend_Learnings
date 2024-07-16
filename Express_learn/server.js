@@ -2,13 +2,17 @@ const express = require("express")
 const app = express()
 
 app.set("view engine", "ejs")
+app.use(express.urlencoded({extended : true}))
+
+
 // app.use(logger)
 
 app.get( "/" ,(req, res) => {
     //  res.sendStatus(500)
     //  res.status(500).send("hi")
     //  res.download("server.js")
-    res.render("index", {text: "world"})
+    // res.render("index", {text: "world"})
+    res.render("user/new.ejs")
 })
 
 const userRouter = require("./routes/users");
