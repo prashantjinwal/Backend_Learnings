@@ -4,7 +4,8 @@ const router = express.Router();
 router.use(logger)
 
 router.get("/", (req, res) => {
-  res.send("users");
+  console.log(req.query.name)
+  res.send("Users List ");
 });
 
 router.get("/new", (req, res) => {
