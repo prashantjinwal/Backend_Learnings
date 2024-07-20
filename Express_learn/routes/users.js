@@ -17,7 +17,7 @@ router.get("/post", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-//   res.send("create post");
+//    res.send("create post");
     const isVaild = true;
     if(isVaild){
         users.push({firstName : req.body.firstName})
